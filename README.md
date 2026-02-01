@@ -1,70 +1,168 @@
-# Getting Started with Create React App
+# 📚 Personal Book Manager 📚
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Personal Book Manager application that allows users to securely manage their reading list, track progress, and gain insights into their reading habits.
 
-## Available Scripts
+Built with React / Next.js, Node.js, Express, MongoDB, and JWT authentication.
 
-In the project directory, you can run:
+## 🚀 Tech Stack
 
-### `npm start`
+* **Frontend:** React+ tailwind
+* **Backend:** Node.js, Express
+* **Database:** MongoDB (Mongoose)
+* **Auth:** JWT-based authentication
+* **State / UI:** React Hooks, Context API, TailwindCSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Core Features
 
-### `npm test`
+### 1. 🔐 Authentication
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* User Signup
+* User Login
+* Secure Logout
+* JWT-based authentication
+* Protected routes and APIs
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. 📘 Book Collection Management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Users can:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Add new books (title, author, status)
+* Update reading status 
+* Edit existing books
+* Delete books
+* Filter by:
 
-### `npm run eject`
+  * **Status** →
+    * 📖 Want to Read
+    * 📘 Reading
+    * ✅ Completed
+  * **Tags** (custom, comma-separated)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each book includes:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Title
+* Author
+* Tags
+* Status
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. 📊 Dashboard
 
-## Learn More
+A clean, uncluttered dashboard that surfaces insight:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Total number of books
+* Count by status
+* Simple filters
+* Editable table of books
+* Ability to update status instantly
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔧 Backend Routes
 
-### Code Splitting
+| Method | Route              | Description                |
+| ------ | ------------------ | -------------------------- |
+| POST   | `/api/auth/signup` | Register user              |
+| POST   | `/api/auth/login`  | Log in user                |
+| GET    | `/api/books`       | Get logged-in user's books |
+| POST   | `/api/books`       | Add new book               |
+| PUT    | `/api/books/:id`   | Update a book              |
+| DELETE | `/api/books/:id`   | Delete a book              |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Each route is protected using JWT.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure (High-level)
 
-### Making a Progressive Web App
+project/
+│── backend/
+│    ├── models/
+│    ├── controllers/
+│    ├── routes/
+│    ├── middelware
+│    └── index.js
+│
+│── frontend/
+     ├── pages/
+     ├── components/
+     ├── context/
+     ├── services/
+     └── styles/
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 1️⃣ Clone Repository
 
-### Advanced Configuration
+```bash
+git clone <repo-url>
+cd project
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 2️⃣ Install Dependencies
+Frontend:
 
-### Deployment
+```bash
+cd frontend
+npm install
+```
+Backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+cd backend
+npm install
+```
 
-### `npm run build` fails to minify
+### 3️⃣ Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Backend `.env`:
+
+```
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_secret
+```
+
+### 4️⃣ Start Development Servers
+
+Backend:
+
+```bash
+npm start
+```
+
+Frontend:
+
+```bash
+npm run dev
+```
+
+🛠 Tech Stack
+* Frontend
+
+    React.js / Next.js (App Router)
+
+    Context API for auth state
+
+    Fetch API for network calls
+
+    Tailwind CSS / CSS
+
+* Backend
+
+    Node.js
+
+    Express.js
+
+    MongoDB (Mongoose)
+
+    JWT Authentication
+
+* Database
+
+    MongoDB Atlas
+
+🌍 Deployment
+
+Frontend: Vercel
+
+Backend: Render / Railway
+
+Database: MongoDB Atlas
