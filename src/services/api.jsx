@@ -1,6 +1,6 @@
 import axios from "axios";
 const API = axios.create({
-  baseURL: "https://book-manager-backend-pifv.onrender.com/",
+  baseURL: "https://book-manager-backend-2.onrender.com/",
 });
 
 API.interceptors.request.use(
@@ -14,7 +14,7 @@ API.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Auth
+// Authentication api
 export const registerUser = (userData) =>
   API.post("/api/auth/signup", userData);
 export const loginUser = (userData) => API.post("/api/auth/login", userData);

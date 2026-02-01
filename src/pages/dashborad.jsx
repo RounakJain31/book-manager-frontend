@@ -98,7 +98,7 @@ export default function Dashboard() {
     loadBooks();
   };
 
-  // Summary Counts 
+  // Total Summary Counts 
   const total = books?.length || 0;
 const want = books?.filter((b) => b.status === "Want to Read")?.length || 0;
 const reading = books?.filter((b) => b.status === "Reading")?.length || 0;
